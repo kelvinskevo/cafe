@@ -6,33 +6,75 @@
             <div class="card-body">
                 <h4 class="card-title">Enter Details</h4>
                 <p class="card-description"> </p>
-                <form action="{{ route('foods.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('foods.store') }}" method="POST" enctype="multipart/form-data" novalidate>
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Title"
-                            value="{{ old('title') }}">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                            placeholder="Title" value="{{ old('title') }}">
+                        @error('title')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" min="0" class="form-control" name="price" placeholder="Price"
+                        <input type="number" min="0" step="0.01"
+                            class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Price"
                             value="{{ old('price') }}">
+                        @error('price')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" name="image" id="image" accept="image/*"
-                            onchange="previewImage(event)">
+                        <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
+                            id="image" accept="image/*" onchange="previewImage(event)">
                         <img id="imagePreview" src="#" alt="Image Preview"
                             style="display:none; margin-top:10px; max-width:200px;">
+                        @error('image')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Description">{{ old('description') }}</textarea>
+                        <textarea class="form-control large-textarea @error('description') is-invalid @enderror" name="description"
+                            placeholder="Description">{{ old('description') }}</textarea>
+                        @error('description')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                     <button type="button" class="btn btn-dark"
                         onclick="window.location.href='{{ url('/foods') }}' ">Cancel</button>
                 </form>
+
+                <style>
+                    .form-control,
+                    .form-control:focus,
+                    .form-control:active,
+                    .form-control:hover {
+                        color: white !important;
+                        background-color: #333 !important;
+                        /* Optional: change background color for better contrast */
+                    }
+
+                    .form-control::placeholder {
+                        color: rgba(255, 255, 255, 0.7) !important;
+                    }
+
+                    .large-textarea {
+                        height: 100px;
+                        /* Adjust the height as needed */
+                    }
+                </style>
 
                 <script>
                     function previewImage(event) {
@@ -45,6 +87,7 @@
                         reader.readAsDataURL(event.target.files[0]);
                     }
                 </script>
+
 
             </div>
         </div>

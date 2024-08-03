@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" min="0" class="form-control" name="price"
+                        <input type="number" min="0" step="0.01" class="form-control" name="price"
                             value="{{ old('price', $food->price) }}" placeholder="Price">
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea cols="50" class="form-control large-textarea" name="description" placeholder="Description">{{ old('description', $food->description) }}</textarea>
+                        <textarea class="form-control large-textarea" name="description" placeholder="Description">{{ old('description', $food->description) }}</textarea>
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -43,11 +43,22 @@
                     <a href="{{ route('foods.index') }}" class="btn btn-dark">Cancel</a>
                 </form>
                 <style>
+                    .form-control,
+                    .form-control:focus,
+                    .form-control:active,
+                    .form-control:hover {
+                        color: white !important;
+                        background-color: #333 !important;
+                        /* Optional: change background color for better contrast */
+                    }
+
+                    .form-control::placeholder {
+                        color: rgba(255, 255, 255, 0.7) !important;
+                    }
+
                     .large-textarea {
-                        height: 100%;
-                        /* Adjust height as needed */
-                        width: 100%;
-                        /* Adjust width as needed */
+                        height: 100px;
+                        /* Adjust the height as needed */
                     }
                 </style>
                 <script>

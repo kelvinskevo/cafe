@@ -41,7 +41,8 @@ class FoodController extends Controller
 
         Food::create($validated);
 
-        return back()->with('success', 'Food created successfully.');
+        // Redirect or return response
+        return redirect()->route('foods.index')->with('message', 'Food Added Successfully');
     }
 
 
@@ -91,7 +92,7 @@ class FoodController extends Controller
         // Update the food record
         $food->update($validated);
 
-        return back()->with('success', 'Food updated successfully.');
+        return redirect()->route('foods.index')->with('message', 'Food updated successfully.');
     }
 
     /**
@@ -101,6 +102,8 @@ class FoodController extends Controller
     {
         $food->delete();
 
-        return back()->with('success', 'Food Deleted successfully.');
+
+        // Redirect or return response
+        return redirect()->route('foods.index')->with('message', 'Food Deleted Successfully');
     }
 }
