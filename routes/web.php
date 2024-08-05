@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [ReservationController::class, 'usereservation'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,10 +41,21 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('foods', FoodController::class);
+
+
+    Route::patch('/reservations/{id}/status', [ReservationController::class, 'updateStatus'])->name('reservations.updateStatus');
+    Route::get('/reservations/confirmed', [ReservationController::class, 'confirmed'])->name('reservations.confirmed');
+    Route::get('/reservations/rejected', [ReservationController::class, 'rejected'])->name('reservations.rejected');
+    Route::get('/reservations/all', [ReservationController::class, 'allreserv'])->name('reservations.all');
+    Route::patch('/reservations/{reservation}', [ReservationController::class, 'update'])->name('reservations.update');
+    Route::patch('/reservations/{id}/cancel', [ReservationController::class, 'cancel'])->name('reservations.cancel');
+
+
+    Route::resource('reservations', ReservationController::class);
 });
 
 require __DIR__ . '/auth.php';
 
-Route::get('/home', [HomeController::class, 'index']);
+
 
 Route::get('/redirects', [HomeController::class, 'redirects']);

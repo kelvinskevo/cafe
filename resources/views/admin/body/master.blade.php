@@ -27,12 +27,37 @@
         integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <style>
+        /* Custom Styles */
+        #reservations-table {
+            background-color: #191c24;
+            color: white;
+        }
+
+        #reservations-table thead {
+            background-color: #2c2f36;
+            /* Optional: Darker background for the header */
+        }
+
+        #reservations-table tbody tr {
+            background-color: #191c24;
+            /* Ensure tbody rows have the same background color */
+        }
+
+        #reservations-table tbody td {
+            color: white;
+            /* Ensure text in tbody cells is white */
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container-scroller">
-        <x-notify::notify />
+
         <!-- partial:partials/_sidebar.html -->
         @include('admin.body.sidebar')
         <!-- partial -->
@@ -254,6 +279,10 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
@@ -270,6 +299,17 @@
         </script>
     @endif
 
+    <script>
+        $(document).ready(function() {
+            $('#reservations-table').DataTable({
+                paging: true, // Enable pagination
+                searching: true, // Enable search
+                ordering: true, // Enable sorting
+                pageLength: 10, // Number of rows per page
+                lengthMenu: [10, 25, 50, 75, 100] // Options for number of rows per page
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -31,6 +31,10 @@ https://templatemo.com/tm-558-klassy-cafe
 
     <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+        integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -94,6 +98,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                     </a>
                                     <ul>
                                         <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                        <li><a href="{{ url('/dashboard') }}">My Reservations</a></li>
                                         <li>
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
@@ -231,102 +236,26 @@ https://templatemo.com/tm-558-klassy-cafe
         <div class="menu-item-carousel">
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel">
-                    <div class="item">
-                        <div class='card card1'>
-                            <div class="price">
-                                <h6>$14</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Chocolate Cake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
+
+                    @foreach ($foods as $food)
+                        <div class="item">
+                            <div style="background-image: url('/admin/user_images/{{ $food->image }}')"
+                                class='card'>
+                                <div class="price">
+                                    <h6>$ {{ $food->price }}</h6>
+                                </div>
+                                <div class='info'>
+                                    <h1 class='title'>{{ $food->title }}</h1>
+                                    <p class='description'>{{ $food->description }}</p>
+                                    <div class="main-text-button">
+                                        <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
+                                                    class="fa fa-angle-down"></i></a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card2'>
-                            <div class="price">
-                                <h6>$22</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Klassy Pancake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card3'>
-                            <div class="price">
-                                <h6>$18</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Tall Klassy Bread</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card4'>
-                            <div class="price">
-                                <h6>$10</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Blueberry CheeseCake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card5'>
-                            <div class="price">
-                                <h6>$8.50</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Klassy Cup Cake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card3'>
-                            <div class="price">
-                                <h6>$7.25</h6>
-                            </div>
-                            <div class='info'>
-                                <h1 class='title'>Klassic Cake</h1>
-                                <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii
-                                    do eiusmod teme.</p>
-                                <div class="main-text-button">
-                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                                class="fa fa-angle-down"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -337,7 +266,7 @@ https://templatemo.com/tm-558-klassy-cafe
     <section class="section" id="chefs">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="text-center col-lg-4 offset-lg-4">
                     <div class="section-heading">
                         <h6>Our Chefs</h6>
                         <h2>We offer the best ingredients for you</h2>
@@ -435,11 +364,23 @@ https://templatemo.com/tm-558-klassy-cafe
                 </div>
                 <div class="col-lg-6">
                     <div class="contact-form">
-                        <form id="contact" action="" method="post">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <form id="contact" action="{{ route('reservations.store') }}" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h4>Table Reservation</h4>
                                 </div>
+
                                 <div class="col-lg-6 col-sm-12">
                                     <fieldset>
                                         <input name="name" type="text" id="name" placeholder="Your Name*"
@@ -460,20 +401,20 @@ https://templatemo.com/tm-558-klassy-cafe
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <select value="number-guests" name="number-guests" id="number-guests">
-                                            <option value="number-guests">Number Of Guests</option>
-                                            <option name="1" id="1">1</option>
-                                            <option name="2" id="2">2</option>
-                                            <option name="3" id="3">3</option>
-                                            <option name="4" id="4">4</option>
-                                            <option name="5" id="5">5</option>
-                                            <option name="6" id="6">6</option>
-                                            <option name="7" id="7">7</option>
-                                            <option name="8" id="8">8</option>
-                                            <option name="9" id="9">9</option>
-                                            <option name="10" id="10">10</option>
-                                            <option name="11" id="11">11</option>
-                                            <option name="12" id="12">12</option>
+                                        <select name="number_of_guests" id="number-guests">
+                                            <option ">Number Of Guests</option>
+                                            <option value="1" id="1">1</option>
+                                            <option value="2" id="2">2</option>
+                                            <option value="3" id="3">3</option>
+                                            <option value="4" id="4">4</option>
+                                            <option value="5" id="5">5</option>
+                                            <option value="6" id="6">6</option>
+                                            <option value="7" id="7">7</option>
+                                            <option value="8" id="8">8</option>
+                                            <option value="9" id="9">9</option>
+                                            <option value="10" id="10">10</option>
+                                            <option value="11" id="11">11</option>
+                                            <option value="12" id="12">12</option>
                                         </select>
                                     </fieldset>
                                 </div>
@@ -490,11 +431,11 @@ https://templatemo.com/tm-558-klassy-cafe
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <select value="time" name="time" id="time">
+                                        <select  name="time" id="time">
                                             <option value="time">Time</option>
-                                            <option name="Breakfast" id="Breakfast">Breakfast</option>
-                                            <option name="Lunch" id="Lunch">Lunch</option>
-                                            <option name="Dinner" id="Dinner">Dinner</option>
+                                            <option value="Breakfast" id="Breakfast">Breakfast</option>
+                                            <option value="Lunch" id="Lunch">Lunch</option>
+                                            <option value="Dinner" id="Dinner">Dinner</option>
                                         </select>
                                     </fieldset>
                                 </div>
@@ -522,7 +463,7 @@ https://templatemo.com/tm-558-klassy-cafe
     <section class="section" id="offers">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="text-center col-lg-4 offset-lg-4">
                     <div class="section-heading">
                         <h6>Klassy Week</h6>
                         <h2>This Week’s Special Meal Offers</h2>
@@ -876,24 +817,38 @@ https://templatemo.com/tm-558-klassy-cafe
     <script src="{{ asset('assets/js/slick.js') }}"></script>
     <script src="{{ asset('assets/js/lightbox.js') }}"></script>
     <script src="{{ asset('assets/js/isotope.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+          integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- End custom js for this page -->
 
-    <!-- Global Init -->
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script>
-        $(function() {
-            var selectedClass = "";
-            $("p").click(function() {
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("." + selectedClass).fadeOut();
-                setTimeout(function() {
-                    $("." + selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
+           @if (Session::has('message'))
+                                                <script>
+                                                    toastr.options = {
+                                                        "progressBar": true,
+                                                        "closeButton": true,
+                                                    }
+                                                    toastr.success("{{ Session::get('message') }}");
+                                                </script>
+                                                @endif
 
-            });
-        });
-    </script>
+                                                <!-- Global Init -->
+                                                <script src="{{ asset('assets/js/custom.js') }}"></script>
+                                                <script>
+                                                    $(function() {
+                                                        var selectedClass = "";
+                                                        $("p").click(function() {
+                                                            selectedClass = $(this).attr("data-rel");
+                                                            $("#portfolio").fadeTo(50, 0.1);
+                                                            $("#portfolio div").not("." + selectedClass).fadeOut();
+                                                            setTimeout(function() {
+                                                                $("." + selectedClass).fadeIn();
+                                                                $("#portfolio").fadeTo(50, 1);
+                                                            }, 500);
+
+                                                        });
+                                                    });
+                                                </script>
 </body>
 
 </html>
