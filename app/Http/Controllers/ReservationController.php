@@ -51,14 +51,34 @@ class ReservationController extends Controller
 
         // Fetch reservations where the user's email matches the reservation's email
         // and the status is either 'In Progress' or 'Confirmed'
-        $reservations = Reservation::where('email', $userEmail)
-            ->whereIn('status', ['In Progress', 'Confirmed'])
+        $currentDate = now();
+        $currentReservations = Reservation::where('email', $userEmail)
+            ->where('status', 'In Progress')
+            ->orWhere(function ($query) use ($userEmail, $currentDate) {
+                $query->where('email', $userEmail)
+                    ->where('status', 'Confirmed')
+                    ->where('date', '>=', $currentDate);
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // Fetch previous reservations (Confirmed reservations after the reservation date or Cancelled reservations)
+        $previousReservations = Reservation::where('email', $userEmail)
+            ->where(function ($query) use ($currentDate) {
+                $query->where('status', 'Cancelled')
+                    ->orWhere('status', 'Rejected')
+                    ->orWhere(function ($query) use ($currentDate) {
+                        $query->where('status', 'Confirmed')
+                            ->where('date', '<', $currentDate);
+                    });
+            })
             ->orderBy('created_at', 'desc')
             ->get();
 
         // Return the view with the reservations
-        return view('dashboard', compact('reservations'));
+        return view('dashboard', compact('currentReservations', 'previousReservations'));
     }
+
 
 
 

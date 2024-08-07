@@ -43,7 +43,7 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
                 </span>
-                <span class="menu-title">Basic UI Elements</span>
+                <span class="menu-title">Reservations</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
