@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChefController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FoodController;
@@ -52,6 +53,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('reservations', ReservationController::class);
+    Route::resource('chefs', ChefController::class);
 });
 
 require __DIR__ . '/auth.php';

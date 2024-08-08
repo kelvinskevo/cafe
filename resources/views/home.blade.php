@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Klassy Cafe - Restaurant HTML Template</title>
     <!--
 
@@ -273,58 +274,31 @@ https://templatemo.com/tm-558-klassy-cafe
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="chef-item">
-                        <div class="thumb">
-                            <div class="overlay"></div>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                            <img src="{{ asset('assets/images/chefs-01.jpg') }}" alt="Chef #1">
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach ($chefs as $chef)
+                        <div class="swiper-slide">
+                            <div class="chef-item">
+                                <div class="thumb position-relative">
+                                    <ul class="p-2 social-icons position-absolute end-0">
+                                        <li><a href="{{ $chef->facebook }}"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                    <img src="{{ asset('admin/chefs_images/' . $chef->image) }}"
+                                        alt="{{ $chef->name }}" class="rounded img-fluid"
+                                        style="object-fit: cover; width: 100%; height: 200px;">
+                                </div>
+                                <div class="mt-3 down-content">
+                                    <h4>{{ $chef->name }}</h4>
+                                    <span>{{ $chef->role }}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="down-content">
-                            <h4>Randy Walker</h4>
-                            <span>Pastry Chef</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="col-lg-4">
-                    <div class="chef-item">
-                        <div class="thumb">
-                            <div class="overlay"></div>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
-                            <img src="{{ asset('assets/images/chefs-02.jpg') }}" alt="Chef #2">
-                        </div>
-                        <div class="down-content">
-                            <h4>David Martin</h4>
-                            <span>Cookie Chef</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="chef-item">
-                        <div class="thumb">
-                            <div class="overlay"></div>
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google"></i></a></li>
-                            </ul>
-                            <img src="{{ asset('assets/images/chefs-03.jpg') }}" alt="Chef #3">
-                        </div>
-                        <div class="down-content">
-                            <h4>Peter Perkson</h4>
-                            <span>Pancake Chef</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -817,12 +791,17 @@ https://templatemo.com/tm-558-klassy-cafe
     <script src="{{ asset('assets/js/slick.js') }}"></script>
     <script src="{{ asset('assets/js/lightbox.js') }}"></script>
     <script src="{{ asset('assets/js/isotope.js') }}"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-          integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- End custom js for this page -->
+    <!-- Include Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-           @if (Session::has('message'))
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- End custom js for this page -->
+</body>
+
+</html>
+                               @if (Session::has('message'))
                                                 <script>
                                                     toastr.options = {
                                                         "progressBar": true,
@@ -847,6 +826,38 @@ https://templatemo.com/tm-558-klassy-cafe
                                                             }, 500);
 
                                                         });
+                                                    });
+                                                </script>
+                                                <!-- Swiper JS -->
+                                                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                                                <!-- Initialize Swiper -->
+                                                <script>
+                                                    var swiper = new Swiper(".mySwiper", {
+                                                        slidesPerView: 1,
+                                                        spaceBetween: 10,
+                                                        pagination: {
+                                                            el: ".swiper-pagination",
+                                                            clickable: true,
+                                                        },
+                                                        autoplay: {
+                                                            delay: 3500, // Delay between slides (in milliseconds)
+                                                            disableOnInteraction: false, // Continue autoplay after user interactions
+                                                        },
+                                                        breakpoints: {
+                                                            640: {
+                                                                slidesPerView: 2,
+                                                                spaceBetween: 20,
+                                                            },
+                                                            768: {
+                                                                slidesPerView: 3,
+                                                                spaceBetween: 40,
+                                                            },
+                                                            1024: {
+                                                                slidesPerView: 4,
+                                                                spaceBetween: 50,
+                                                            },
+                                                        },
                                                     });
                                                 </script>
 </body>

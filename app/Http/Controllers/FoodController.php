@@ -100,10 +100,12 @@ class FoodController extends Controller
      */
     public function destroy(Food $food)
     {
+        // Check if the image exists and delete it from the folder
+        if (file_exists(public_path('admin/user_images/' . $food->image))) {
+            unlink(public_path('admin/user_images/' . $food->image));
+        }
+
         $food->delete();
-
-
-        // Redirect or return response
         return redirect()->route('foods.index')->with('message', 'Food Deleted Successfully');
     }
 }
