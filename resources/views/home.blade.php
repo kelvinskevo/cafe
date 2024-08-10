@@ -434,311 +434,180 @@ https://templatemo.com/tm-558-klassy-cafe
     <!-- ***** Reservation Area Ends ***** -->
 
     <!-- ***** Menu Area Starts ***** -->
-    <section class="section" id="offers">
-        <div class="container">
-            <div class="row">
-                <div class="text-center col-lg-4 offset-lg-4">
-                    <div class="section-heading">
-                        <h6>Klassy Week</h6>
-                        <h2>This Week’s Special Meal Offers</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row" id="tabs">
-                        <div class="col-lg-12">
-                            <div class="heading-tabs">
-                                <div class="row">
-                                    <div class="col-lg-6 offset-lg-3">
-                                        <ul>
-                                            <li><a href='#tabs-1'><img
-                                                        src="{{ asset('assets/images/tab-icon-01.png') }}"
-                                                        alt="">Breakfast</a></li>
-                                            <li><a href='#tabs-2'><img
-                                                        src="{{ asset('assets/images/tab-icon-02.png') }}"
-                                                        alt="">Lunch</a></a></li>
-                                            <li><a href='#tabs-3'><img
-                                                        src="{{ asset('assets/images/tab-icon-03.png') }}"
-                                                        alt="">Dinner</a></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <section class='tabs-content'>
-                                <article id='tabs-1'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-01.png') }}"
-                                                                alt="">
-                                                            <h4>Fresh Chicken Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$10.50</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-02.png') }}"
-                                                                alt="">
-                                                            <h4>Orange Juice</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$8.50</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-03.png') }}"
-                                                                alt="">
-                                                            <h4>Fruit Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$9.90</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-04.png') }}"
-                                                                alt="">
-                                                            <h4>Eggs Omelette</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$6.50</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-05.png') }}"
-                                                                alt="">
-                                                            <h4>Dollma Pire</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$5.00</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-06.png') }}"
-                                                                alt="">
-                                                            <h4>Omelette & Cheese</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$4.10</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article id='tabs-2'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-04.png') }}"
-                                                                alt="">
-                                                            <h4>Eggs Omelette</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$14</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-05.png') }}"
-                                                                alt="">
-                                                            <h4>Dollma Pire</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$18</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-06.png') }}"
-                                                                alt="">
-                                                            <h4>Omelette & Cheese</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$22</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-01.png') }}"
-                                                                alt="">
-                                                            <h4>Fresh Chicken Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$10</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-02.png') }}"
-                                                                alt="">
-                                                            <h4>Orange Juice</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$20</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-03.png') }}"
-                                                                alt="">
-                                                            <h4>Fruit Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$30</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article id='tabs-3'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-05.png') }}"
-                                                                alt="">
-                                                            <h4>Eggs Omelette</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$14</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-03.png') }}"
-                                                                alt="">
-                                                            <h4>Orange Juice</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$18</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-02.png') }}"
-                                                                alt="">
-                                                            <h4>Fruit Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$10</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-06.png') }}"
-                                                                alt="">
-                                                            <h4>Fresh Chicken Salad</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$8.50</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-01.png') }}"
-                                                                alt="">
-                                                            <h4>Dollma Pire</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$9</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="{{ asset('assets/images/tab-item-04.png') }}"
-                                                                alt="">
-                                                            <h4>Omelette & Cheese</h4>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur koit adipiscing
-                                                                elit, sed do.</p>
-                                                            <div class="price">
-                                                                <h6>$11</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            </section>
-                        </div>
-                    </div>
+<section class="section" id="offers">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-lg-4 offset-lg-4">
+                <div class="section-heading">
+                    <h6>Klassy Week</h6>
+                    <h2>This Week’s Special Meal Offers</h2>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row" id="tabs">
+                    <div class="col-lg-12">
+                        <div class="heading-tabs">
+                            <div class="row">
+                                <div class="col-lg-6 offset-lg-3">
+                                    <ul>
+                                        <li><a href='#tabs-1'><img
+                                                    src="{{ asset('assets/images/tab-icon-01.png') }}"
+                                                    alt="">Breakfast</a></li>
+                                        <li><a href='#tabs-2'><img
+                                                    src="{{ asset('assets/images/tab-icon-02.png') }}"
+                                                    alt="">Lunch</a></li>
+                                        <li><a href='#tabs-3'><img
+                                                    src="{{ asset('assets/images/tab-icon-03.png') }}"
+                                                    alt="">Dinner</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+            <section class='tabs-content'>
+                <article id='tabs-1'>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="left-list">
+                                        @foreach ($breakfast->slice(0,
+                                                ceil($breakfast->count() / 2)) as $item)
+                                                <div class="col-lg-12">
+                                                    <div class="tab-item">
+                                                        <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                            alt="{{ $item->name }}">
+                                                        <h4>{{ $item->name }}</h4>
+                                                        <p>{{ $item->description }}</p>
+                                                        <div class="price">
+                                                            <h6>${{ $item->price }}</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="right-list">
+                                @foreach ($breakfast->slice(ceil($breakfast->count() / 2)) as $item)
+                                    <div class="col-lg-12">
+                                        <div class="tab-item">
+                                            <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                alt="{{ $item->name }}">
+                                            <h4>{{ $item->name }}</h4>
+                                            <p>{{ $item->description }}</p>
+                                            <div class="price">
+                                                <h6>${{ $item->price }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </article>
+
+
+                <article id='tabs-2'>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="left-list">
+                                    @foreach ($lunch->slice(0, ceil($lunch->count() / 2)) as $item)
+                                        <div class="col-lg-12">
+                                            <div class="tab-item">
+                                                <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                    alt="{{ $item->name }}">
+                                                <h4>{{ $item->name }}</h4>
+                                                <p>{{ $item->description }}</p>
+                                                <div class="price">
+                                                    <h6>${{ $item->price }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="right-list">
+                                    @foreach ($lunch->slice(ceil($lunch->count() / 2)) as $item)
+                                        <div class="col-lg-12">
+                                            <div class="tab-item">
+                                                <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                    alt="{{ $item->name }}">
+                                                <h4>{{ $item->name }}</h4>
+                                                <p>{{ $item->description }}</p>
+                                                <div class="price">
+                                                    <h6>${{ $item->price }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article id='tabs-3'>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="left-list">
+                                    @foreach ($dinner->slice(0, ceil($dinner->count() / 2)) as $item)
+                                        <div class="col-lg-12">
+                                            <div class="tab-item">
+                                                <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                    alt="{{ $item->name }}">
+                                                <h4>{{ $item->name }}</h4>
+                                                <p>{{ $item->description }}</p>
+                                                <div class="price">
+                                                    <h6>${{ $item->price }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="right-list">
+                                    @foreach ($dinner->slice(ceil($dinner->count() / 2)) as $item)
+                                        <div class="col-lg-12">
+                                            <div class="tab-item">
+                                                <img src="{{ asset('admin/special_images/' . $item->image) }}"
+                                                    alt="{{ $item->name }}">
+                                                <h4>{{ $item->name }}</h4>
+                                                <p>{{ $item->description }}</p>
+                                                <div class="price">
+                                                    <h6>${{ $item->price }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
     </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
     <!-- ***** Chefs Area Ends ***** -->
 
     <!-- ***** Footer Start ***** -->
@@ -801,65 +670,65 @@ https://templatemo.com/tm-558-klassy-cafe
 </body>
 
 </html>
-                               @if (Session::has('message'))
-                                                <script>
-                                                    toastr.options = {
-                                                        "progressBar": true,
-                                                        "closeButton": true,
-                                                    }
-                                                    toastr.success("{{ Session::get('message') }}");
-                                                </script>
-                                                @endif
+@if (Session::has('message'))
+    <script>
+        toastr.options = {
+            "progressBar": true,
+            "closeButton": true,
+        }
+        toastr.success("{{ Session::get('message') }}");
+    </script>
+@endif
 
-                                                <!-- Global Init -->
-                                                <script src="{{ asset('assets/js/custom.js') }}"></script>
-                                                <script>
-                                                    $(function() {
-                                                        var selectedClass = "";
-                                                        $("p").click(function() {
-                                                            selectedClass = $(this).attr("data-rel");
-                                                            $("#portfolio").fadeTo(50, 0.1);
-                                                            $("#portfolio div").not("." + selectedClass).fadeOut();
-                                                            setTimeout(function() {
-                                                                $("." + selectedClass).fadeIn();
-                                                                $("#portfolio").fadeTo(50, 1);
-                                                            }, 500);
+<!-- Global Init -->
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+<script>
+    $(function() {
+        var selectedClass = "";
+        $("p").click(function() {
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("." + selectedClass).fadeOut();
+            setTimeout(function() {
+                $("." + selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
 
-                                                        });
-                                                    });
-                                                </script>
-                                                <!-- Swiper JS -->
-                                                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        });
+    });
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-                                                <!-- Initialize Swiper -->
-                                                <script>
-                                                    var swiper = new Swiper(".mySwiper", {
-                                                        slidesPerView: 1,
-                                                        spaceBetween: 10,
-                                                        pagination: {
-                                                            el: ".swiper-pagination",
-                                                            clickable: true,
-                                                        },
-                                                        autoplay: {
-                                                            delay: 3500, // Delay between slides (in milliseconds)
-                                                            disableOnInteraction: false, // Continue autoplay after user interactions
-                                                        },
-                                                        breakpoints: {
-                                                            640: {
-                                                                slidesPerView: 2,
-                                                                spaceBetween: 20,
-                                                            },
-                                                            768: {
-                                                                slidesPerView: 3,
-                                                                spaceBetween: 40,
-                                                            },
-                                                            1024: {
-                                                                slidesPerView: 4,
-                                                                spaceBetween: 50,
-                                                            },
-                                                        },
-                                                    });
-                                                </script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        autoplay: {
+            delay: 3500, // Delay between slides (in milliseconds)
+            disableOnInteraction: false, // Continue autoplay after user interactions
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
 </body>
 
 </html>

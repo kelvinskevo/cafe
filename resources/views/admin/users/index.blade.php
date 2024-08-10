@@ -8,7 +8,7 @@
                 <p class="card-description"> Active <code>Users</code>
                 </p>
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table id="reservations-table" class="table table-striped">
                         <thead>
                             <tr>
                                 <th> User </th>

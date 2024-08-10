@@ -11,7 +11,7 @@
                 </p>
                 <div class="table-responsive">
 
-                    <table class="table table-striped">
+                    <table id="reservations-table" class="table table-striped">
 
                         <thead>
                             <tr>
@@ -28,33 +28,33 @@
                                     <td class="py-1">
                                         <img src="{{ asset('admin/chefs_images/' . $chef->image) }}"
                                             alt="{{ $chef->title }}" ">
-                                        </td>
-                                        <td> {{ $chef->name }} </td>
+                                                    </td>
+                                                    <td> {{ $chef->name }} </td>
 
-                                        <td class="description"> {{ $chef->role }}</td>
-                                        <style>
-                                            .description {
-                                                max-width: 200px; /* Adjust based on your layout */
-                                                overflow: hidden;
-                                                text-overflow: ellipsis;
-                                                white-space: nowrap;
-                                            }
-                                        </style>
+                                                    <td class="description"> {{ $chef->role }}</td>
+                                                    <style>
+                                                        .description {
+                                                            max-width: 200px; /* Adjust based on your layout */
+                                                            overflow: hidden;
+                                                            text-overflow: ellipsis;
+                                                            white-space: nowrap;
+                                                        }
+                                                    </style>
 
-                                       <td>
-        <form id="delete-form-{{ $chef->id }}" action="{{ route('chefs.destroy', $chef->id) }}" method="post">
-            @csrf
-            @method('DELETE')
+                                                   <td>
+                    <form id="delete-form-{{ $chef->id }}" action="{{ route('chefs.destroy', $chef->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
 
-            <a href="/chefs/{{ $chef->id }}/edit" class="btn btn-inverse-primary">
-                <i class="mdi mdi-border-color"></i>
-            </a>
-            <button type="button" class="btn btn-inverse-danger" onclick="confirmDelete({{ $chef->id }})">
-                <i class="mdi mdi-delete"></i>
-            </button>
-        </form>
-    </td>
-                                    </tr>
+                        <a href="/chefs/{{ $chef->id }}/edit" class="btn btn-inverse-primary">
+                            <i class="mdi mdi-border-color"></i>
+                        </a>
+                        <button type="button" class="btn btn-inverse-danger" onclick="confirmDelete({{ $chef->id }})">
+                            <i class="mdi mdi-delete"></i>
+                        </button>
+                    </form>
+                </td>
+                                                </tr>
      @endforeach
 
 

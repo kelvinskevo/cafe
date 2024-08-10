@@ -11,14 +11,21 @@
             <span class="nav-link">Navigation</span>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('chefs.index') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-table-large"></i>
+                </span>
+                <span class="menu-title">Chefs</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" href="{{ route('users.index') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
-                <span class="menu-title">Users</span>
+                <span class="menu-title">Events</span>
             </a>
         </li>
-
         <li class="nav-item menu-items">
             <a class="nav-link" href="{{ route('foods.index') }}">
                 <span class="menu-icon">
@@ -27,16 +34,6 @@
                 <span class="menu-title">Foods</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="{{ route('chefs.index') }}">
-                <span class="menu-icon">
-                    <i class="mdi mdi-table-large"></i>
-                </span>
-                <span class="menu-title">Chefs</span>
-            </a>
-        </li>
-
-
         <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
@@ -62,6 +59,24 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('specials.index') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Specials</span>
+            </a>
+        </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('users.index') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Users</span>
+            </a>
+        </li>
+
 
 
     </ul>

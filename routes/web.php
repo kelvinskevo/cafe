@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SpecialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,9 +52,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/reservations/{reservation}', [ReservationController::class, 'update'])->name('reservations.update');
     Route::patch('/reservations/{id}/cancel', [ReservationController::class, 'cancel'])->name('reservations.cancel');
 
+    Route::get('/specials/this-week', [SpecialController::class, 'thisWeek'])->name('specials.this_week');
+    Route::get('/specials/future-weeks', [SpecialController::class, 'futureWeeks'])->name('specials.future_weeks');
+    Route::get('/specials/previous-weeks', [SpecialController::class, 'previousWeeks'])->name('specials.previous_weeks');
+
+
 
     Route::resource('reservations', ReservationController::class);
     Route::resource('chefs', ChefController::class);
+    Route::resource('specials', SpecialController::class);
 });
 
 require __DIR__ . '/auth.php';
