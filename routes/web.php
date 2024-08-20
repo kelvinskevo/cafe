@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChefController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FoodController;
@@ -61,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('reservations', ReservationController::class);
     Route::resource('chefs', ChefController::class);
     Route::resource('specials', SpecialController::class);
+    Route::resource('events', EventController::class);
 });
 
 require __DIR__ . '/auth.php';

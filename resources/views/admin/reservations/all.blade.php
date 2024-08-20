@@ -4,7 +4,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title"> Confirmed Reservations</h4>
+                <h4 class="card-title"> All Reservations</h4>
                 <a href="{{ route('reservations.create') }}" class="btn btn-inverse-primary">Add New</a>
 
 

@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateReservationRequest;
 use App\Models\Reservation;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class ReservationController extends Controller
 {
@@ -75,8 +76,11 @@ class ReservationController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        // Return the view with the reservations
-        return view('dashboard', compact('currentReservations', 'previousReservations'));
+        // Fetch events
+        $events = Event::orderBy('date', 'desc')->get();
+
+        // Return the view with the reservations and events
+        return view('dashboard', compact('currentReservations', 'previousReservations', 'events'));
     }
 
 

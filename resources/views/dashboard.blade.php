@@ -54,73 +54,24 @@
 
                     <swiper-container class="mySwiper" space-between="30" centered-slides="true" autoplay-delay="2500"
                         autoplay-disable-on-interaction="false">
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
-                                    <img class="object-cover w-full"
-                                        src="{{ asset('admin/upcoming events/image1.jpg') }}" alt="Chinese Night">
-                                    <div class="p-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">Chinese Night</h3>
-                                        <p class="text-gray-600">2024-08-15 | 7:00 PM</p>
-                                        <p class="mt-2 text-gray-700">Enjoy an evening of authentic Chinese cuisine.</p>
+
+                        @foreach ($events as $event)
+                            <swiper-slide>
+                                <div class="swiper-slide">
+                                    <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
+                                        <img src="{{ asset('admin/event_images/' . $event->image) }}"
+                                            alt="{{ $event->title }}">
+                                        <div class="p-4">
+                                            <h3 class="text-lg font-semibold text-gray-900">{{ $event->title }}</h3>
+                                            <p class="text-gray-600">{{ $event->date }} | {{ $event->time }}</p>
+                                            <p class="mt-2 text-gray-700"> {{ $event->description }}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
-                                    <img class="object-cover w-full"
-                                        src="{{ asset('admin/upcoming events/indian.jpg') }}"
-                                        alt="Indian Food Festival">
-                                    <div class="p-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">Indian Food Festival</h3>
-                                        <p class="text-gray-600">2024-08-20 | 6:00 PM</p>
-                                        <p class="mt-2 text-gray-700">A celebration of Indian flavors and spices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
-                                    <img class="object-cover w-full"
-                                        src="{{ asset('admin/upcoming events/image2.jpg') }}" alt="Chinese Night">
-                                    <div class="p-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">Chinese Night</h3>
-                                        <p class="text-gray-600">2024-08-15 | 7:00 PM</p>
-                                        <p class="mt-2 text-gray-700">Enjoy an evening of authentic Chinese cuisine.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
-                                    <img class="object-cover w-full"
-                                        src="{{ asset('admin/upcoming events/image3.jpg') }}" alt="Chinese Night">
-                                    <div class="p-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">Chinese Night</h3>
-                                        <p class="text-gray-600">2024-08-15 | 7:00 PM</p>
-                                        <p class="mt-2 text-gray-700">Enjoy an evening of authentic Chinese cuisine.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="swiper-slide">
-                                <div class="overflow-hidden bg-white rounded-lg shadow-lg event-card">
-                                    <img class="object-cover w-full"
-                                        src="{{ asset('admin/upcoming events/image1.jpg') }}"
-                                        alt="Indian Food Festival">
-                                    <div class="p-4">
-                                        <h3 class="text-lg font-semibold text-gray-900">Indian Food Festival</h3>
-                                        <p class="text-gray-600">2024-08-20 | 6:00 PM</p>
-                                        <p class="mt-2 text-gray-700">A celebration of Indian flavors and spices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
+                            </swiper-slide>
+                        @endforeach
+
 
                     </swiper-container>
 

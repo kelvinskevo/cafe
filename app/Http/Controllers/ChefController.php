@@ -116,6 +116,18 @@ class ChefController extends Controller
         $chef->delete();
 
         // Redirect to the chefs index page with a success message
-        return redirect()->route('chefs.index')->with('message', 'Chef and Image Deleted Successfully');
+        return redirect()->route('chefs.index')->with('message', 'Chef Deleted Successfully');
+    }
+
+    public function stored(StoreChefRequest $request)
+    {
+
+        $validated = $request->validated();
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('admin/images'), $imageName);
+            $validated['image'] = $imageName;
+        }
     }
 }

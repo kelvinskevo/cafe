@@ -15,11 +15,13 @@ class HomeController extends Controller
     protected $breakfast;
     protected $lunch;
     protected $dinner;
+    protected $specials;
 
     public function __construct()
     {
         $this->foods = Food::all();
         $this->chefs = Chef::all();
+        $this->specials = Special::all();
         $this->breakfast = Special::where('category', 'breakfast')->get();
         $this->lunch = Special::where('category', 'lunch')->get();
         $this->dinner = Special::where('category', 'dinner')->get();
@@ -31,6 +33,7 @@ class HomeController extends Controller
         return view('home')->with([
             'foods' => $this->foods,
             'chefs' => $this->chefs,
+            'specials' => $this->specials,
             'breakfast' => $this->breakfast,
             'lunch' => $this->lunch,
             'dinner' => $this->dinner
@@ -53,7 +56,9 @@ class HomeController extends Controller
             return view('home')->with([
                 'foods' => $this->foods,
                 'chefs' => $this->chefs,
-                'specials' => $this->specials
+                'breakfast' => $this->breakfast,
+                'lunch' => $this->lunch,
+                'dinner' => $this->dinner,
             ]);
         }
     }
