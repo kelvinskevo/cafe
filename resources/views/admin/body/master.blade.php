@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>{{ $pageTitle ?? 'Default Title' }}</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/css/vendor.bundle.base.css') }}">
@@ -68,21 +68,12 @@
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_navbar.html -->
             <nav class="flex-row p-0 navbar fixed-top d-flex">
-                <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img
-                            src="{{ asset('admin/assets/images/logo-mini.svg') }}" alt="logo" /></a>
-                </div>
+
                 <div class="flex-grow navbar-menu-wrapper d-flex align-items-stretch">
                     <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-menu"></span>
                     </button>
-                    <ul class="navbar-nav w-100">
-                        <li class="nav-item w-100">
-                            <form class="mt-2 nav-link mt-md-0 d-none d-lg-flex search">
-                                <input type="text" class="form-control text-light" placeholder="Search products">
-                            </form>
-                        </li>
-                    </ul>
+
                     <ul class="navbar-nav navbar-nav-right">
 
                         <li class="nav-item nav-settings d-none d-lg-block">
@@ -190,8 +181,11 @@
                             <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle"
-                                        src="{{ asset('admin/assets/images/faces/face15.jpg') }}" alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                        @if (Auth::user() && Auth::user()->image) <img src="{{ asset('admin/user_images/' . Auth::user()->image) }}" alt="User Image">
+                                        @else
+                                        <img src="{{ asset('admin/assets/images/faces/face15.jpg') }}" alt="Default Image"> @endif
+                                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}
+                                    </p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>

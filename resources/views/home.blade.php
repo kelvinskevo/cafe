@@ -13,7 +13,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <title>Klassy Cafe - Restaurant HTML Template</title>
+    <title>Klassy Cafe</title>
     <!--
 
 TemplateMo 558 Klassy Cafe
@@ -473,7 +473,7 @@ https://templatemo.com/tm-558-klassy-cafe
                         <div class="col-lg-6">
                             <div class="row">
                                 <div class="left-list">
-                                          @foreach ($breakfast->slice(0,
+                                           @foreach ($breakfast->slice(0,
                                                 ceil($breakfast->count() / 2)) as $item)
                                                 <div class="col-lg-12">
                                                     <div class="tab-item">
